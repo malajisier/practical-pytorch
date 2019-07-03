@@ -109,11 +109,30 @@ PyTorch在autograd模块中实现了计算图的相关功能，autograd中的核
 专门为深度学习而设计的模块。torch.nn的核心数据结构是`Module`，它是一个抽象概念，既可以表示神经网络中的某个层（layer），也可以表示一个包含很多层的神经网络。
 在实际使用中，最常见的做法是继承`nn.Module`，撰写自己的网络/层.
 
-- 利用`nn.Module`自定义层
-- 多层感知机
-  - Parameter 参数命名规范
-- ` nn.functional` 
-- `nn.module`深入理解     
+#### 1.1 利用`nn.Module`自定义层
+
+-  自定义层的构造函数`__init__()`需调用`nn.Module`的构造函数
+- `Parameter`封装了可学习参数，是一种特殊的`Tensor`，但其默认需要求导
+- 定义前向传播函数`forward()`
+- 无需写反向传播函数，nn.Module能够利用autograd自动实现反向传播
+
+#### 1.2 多层感知机
+
+- Parameter 参数命名规范
+
+#### 1.3 ` nn.functional`
+
+nn中的大多数layer，在`functional`中都有一个与之相对应的函数 
+
+#### 1.4 `nn.module`深入理解      
+
+- 子Module
+
+- `training`属性 
+
+- hook / 钩子函数
+
+  
 
 ### 2. 神经网络层   
 
