@@ -1,0 +1,7 @@
+# ignore folders
+.ipynb_checkpoints/
+.idea/
+data/
+__pycache__/
+
+mnist.pkl.gz
